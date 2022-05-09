@@ -29,27 +29,27 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.887" />
+        app:layout_constraintVertical_bias="0.881" />
 
     <Button
         android:id="@+id/button7"
         android:layout_width="190dp"
         android:layout_height="54dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="4dp"
         android:text="Yes"
         app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toTopOf="@+id/button9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.887" />
+        app:layout_constraintVertical_bias="0.886" />
 
     <Button
         android:id="@+id/button8"
         android:layout_width="188dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="84dp"
         android:text="Dolphin"
         app:backgroundTint="#FF5722"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,11 +60,11 @@
         android:layout_width="195dp"
         android:layout_height="58dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="84dp"
         android:text="salute"
         app:backgroundTint="#E91E63"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/button8" />
 </androidx.constraintlayout.widget.ConstraintLayout>
