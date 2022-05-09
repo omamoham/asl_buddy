@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class vocab extends AppCompatActivity {
 
     private CheckBox intro, ASL, English, intro_quiz;
-    private Button backbut;
+   // private Button backbut;//uncomment if needed
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +31,15 @@ public class vocab extends AppCompatActivity {
             }
         });
 
-        backbut = findViewById(R.id.button11);
+        //uncomment if needed
+        /*backbut = findViewById(R.id.button11);
         backbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intro_intent12 = new Intent(getApplicationContext(), home_page.class);
                 startActivity(intro_intent12);
             }
-        });
+        });*/
 
         intro_quiz = findViewById(R.id.checkBox5);
         intro_quiz.setOnClickListener(new View.OnClickListener() {
@@ -67,11 +68,11 @@ public class vocab extends AppCompatActivity {
 
     }
 
-    @Override
+   /* @Override
     public void onBackPressed() {
        // super.onBackPressed();
         startActivity(new Intent(vocab.this,home_page.class));
-    }
+    }*/
 }
 
 
