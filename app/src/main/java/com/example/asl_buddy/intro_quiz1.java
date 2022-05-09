@@ -56,6 +56,7 @@ public class intro_quiz1 extends AppCompatActivity implements View.OnClickListen
             case R.id.imageButton3:
                 correct.start();
                 Toast.makeText(intro_quiz1.this,"Correct answer!",Toast.LENGTH_LONG).show();
+                finish();
                 startActivity(new  Intent(intro_quiz1.this,question2.class));
                 break;
 

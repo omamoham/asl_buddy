@@ -15,7 +15,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-public class home_page extends AppCompatActivity implements View.OnClickListener{  //test
+public class home_page extends AppCompatActivity {  //test
 
     private ImageButton vocabu;
     private Button translate;
@@ -49,35 +49,15 @@ public class home_page extends AppCompatActivity implements View.OnClickListener
         });
 
         button_sign_out=findViewById(R.id.button10);
-        button_sign_out.setOnClickListener(this);
-
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            // ...
-            case R.id.button10:
-                signOut();
-                //startActivity(new Intent(home_page.this,MainActivity.class));
-                break;
+        button_sign_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent logout = new Intent(getApplicationContext(), MainActivity.class);
+                finish();
+                startActivity(logout);
             }
-        //break;
-            // ...
-        }
+        });
 
-    private void signOut() {
-        mGoogleSignInClient.signOut()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(home_page.this,"Signed Out",Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(home_page.this,MainActivity.class));
-                    }
-                });
     }
-
-
 
 }

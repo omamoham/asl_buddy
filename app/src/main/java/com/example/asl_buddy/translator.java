@@ -98,4 +98,9 @@ public class translator extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

@@ -54,7 +54,7 @@ public class question2 extends AppCompatActivity implements View.OnClickListener
             case R.id.button3:
                 passed.start();
                 Toast.makeText(question2.this,"Correct answer! Quiz passed!",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(question2.this,vocab.class));
+                finish();
                 break;
 
             case R.id.button8:

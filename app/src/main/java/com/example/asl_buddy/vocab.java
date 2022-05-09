@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class vocab extends AppCompatActivity {
 
     private CheckBox intro, ASL, English, intro_quiz;
-    private Button backbut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +27,6 @@ public class vocab extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intro_intent = new Intent(getApplicationContext(), intro_video.class);
                 startActivity(intro_intent);
-            }
-        });
-
-        backbut = findViewById(R.id.button11);
-        backbut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intro_intent12 = new Intent(getApplicationContext(), home_page.class);
-                startActivity(intro_intent12);
             }
         });
 
@@ -69,10 +59,11 @@ public class vocab extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-       // super.onBackPressed();
-        startActivity(new Intent(vocab.this,home_page.class));
+        finish();
     }
 }
+
+
 
 
 
