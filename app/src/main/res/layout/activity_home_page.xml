@@ -43,7 +43,7 @@
         android:id="@+id/button10"
         android:layout_width="242dp"
         android:layout_height="91dp"
-        android:text="Sign Out Google"
+        android:text="Sign Out"
         android:textColor="#090505"
         android:textSize="24sp"
         android:textStyle="bold"

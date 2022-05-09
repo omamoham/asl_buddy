@@ -27,4 +27,9 @@ public class MagnifySymbol extends AppCompatActivity {
             System.out.println("Magnifier passed invalid drawableID");
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

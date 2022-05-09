@@ -186,4 +186,9 @@ public class translatorResult extends AppCompatActivity {
         //layout.addView(btn);
         // HOW TO ^^^------------
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

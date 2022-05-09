@@ -83,6 +83,7 @@ public class login_page extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful())
                 {
+                    finish();
                     startActivity(new Intent(login_page.this,home_page.class));
                 }
                 else
@@ -95,4 +96,9 @@ public class login_page extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+        startActivity(new Intent(login_page.this,MainActivity.class));
+    }
 }

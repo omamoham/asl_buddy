@@ -114,17 +114,20 @@ public class sign_up extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful())
                                     {
-                                        Toast.makeText(sign_up.this,"Sucess",Toast.LENGTH_LONG).show();
+                                        finish();
+                                        Toast.makeText(sign_up.this,"Success",Toast.LENGTH_LONG).show();
 
                                     }
                                     else
                                     {
+                                        finish();
                                         Toast.makeText(sign_up.this,"Failed",Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
                         } else
                             {
+                                finish();
                                 Toast.makeText(sign_up.this,"Failed",Toast.LENGTH_LONG).show();
                             }
                     }

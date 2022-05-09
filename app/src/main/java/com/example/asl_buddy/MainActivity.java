@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 Intent login_intent=new Intent(getApplicationContext(),login_page.class);
+                finish();
                 startActivity(login_intent);
             }
         }
@@ -118,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this,"User Email: "+personEmail,Toast.LENGTH_SHORT).show();
             }
 
+            finish();
             startActivity(new Intent(MainActivity.this,home_page.class));
             // Signed in successfully, show authenticated UI.
         } catch (ApiException e) {
