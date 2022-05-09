@@ -36,7 +36,7 @@ public class translatorResult extends AppCompatActivity {
 
         //Convert to lowercase
         engText = engText.toLowerCase(Locale.ROOT);
-        Toast.makeText(getApplicationContext(), engText, Toast.LENGTH_LONG).show();
+
         //Remove punctuation (,.!?)
         String input = new String("");
         for (int i = 0; i < engText.length(); i++) {
@@ -74,15 +74,20 @@ public class translatorResult extends AppCompatActivity {
             message.setTextSize(36);
             message.setPadding(100, 100, 100, 100);
             message.setTypeface(Typeface.MONOSPACE, Typeface.BOLD);
-            //-------------
-            // Make it center aligned not right aligned
+            message.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
-
-            //
-
-
+            TextView message2 = new TextView(this);
+            String message2Text = "ASL doesn't sign every word you would use in English! Try using the most important ones.\n";
+            message2Text += "For example, rather than \n\"Where are you going?\", \ntry \n\"Where you go?\"";
+            message2.setText(message2Text);
+            message2.setTextColor(Color.WHITE);
+            message2.setTextSize(24);
+            message2.setPadding(100, 100, 100, 100);
+            message2.setTypeface(Typeface.MONOSPACE, Typeface.BOLD);
+            message2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
             layoutY.addView(message);
+            layoutY.addView(message2);
         }
         //Display available words
         else {
