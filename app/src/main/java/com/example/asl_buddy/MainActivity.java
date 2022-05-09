@@ -31,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Temp skip
+        //Intent skip = new Intent(getApplicationContext(), home_page.class);
+        //startActivity(skip);
+
         // Configure sign-in to request the user's ID, email address, and basic
 // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -117,6 +121,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this,home_page.class));
             // Signed in successfully, show authenticated UI.
         } catch (ApiException e) {
+            //e.printStackTrace();
+
+            //System.out.println(e);
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
 
