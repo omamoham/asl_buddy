@@ -44,7 +44,10 @@ public class Vocabulary {
 
         for (int i = 0; i < words.length; i++) {
             //If available
-            if (availableWords.indexOf(words[i]) != -1) {
+            //words[i].equals(found.get(i))
+            //availableWords.indexOf(words[i]) != -1
+            if (isValid(words[i])) {
+                System.out.println(words[i]);
                 //Are there multiple?
                 found.add(words[i]);
 
@@ -55,7 +58,7 @@ public class Vocabulary {
                     String next = words[i] + Integer.toString(num);
 
                     //If there are multiple
-                    if (availableWords.indexOf(next) != -1) {
+                    if (isValid(next)) {
                         found.add(next);
                         num++;
                     }
@@ -71,5 +74,35 @@ public class Vocabulary {
 
     public ArrayList<String> getVocab() {
         return vocab;
+    }
+
+    private Boolean isValid(String word1) {
+        String[] word2 = availableWords.split("\n");
+
+        //Loop through every available word (word2[i]), test chars of each
+        for (int i = 0; i < word2.length; i++) {
+            if (sameChars(word1, word2[i]))
+                return true;
+        }
+
+        return false;
+    }
+
+    private Boolean sameChars(String word1, String word2) {
+        System.out.println(word1 + " == " + word2 + "?");
+        System.out.println(word1.length() + " " + word2.length());
+        if (word1.length() != word2.length() - 1)
+            return false;
+        else {
+            for (int k = 0; k < word1.length(); k++) {
+                System.out.println(word1.charAt(k) + " == " + word2.charAt(k) + "?");
+                if (word1.charAt(k) != word2.charAt(k)) {
+                    System.out.println("no");
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }

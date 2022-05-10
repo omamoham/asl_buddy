@@ -74,12 +74,12 @@ public class translator extends AppCompatActivity {
     }
 
     private void useMicrophone() {
+        Toast.makeText(getApplicationContext(), "Listening...", Toast.LENGTH_LONG).show();
+
         SpeechRecognition STT = new SpeechRecognition();
         String[] strings = {"Test", "1"};
 
         try {
-            Toast.makeText(getApplicationContext(), "Listening...", Toast.LENGTH_LONG).show();
-
             //Get input from microphone
             String output = STT.initialize(strings);
 

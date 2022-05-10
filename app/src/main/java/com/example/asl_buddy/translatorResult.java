@@ -48,6 +48,7 @@ public class translatorResult extends AppCompatActivity {
         //Make sure input isn't empty or whitespaces
         if (input == null || input.length() == 0 || input.trim().isEmpty()) {
             System.out.println("No input");
+            finish();
         }
         else {
             //Access vocab class
@@ -77,20 +78,37 @@ public class translatorResult extends AppCompatActivity {
             message.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
             TextView message2 = new TextView(this);
-            String message2Text = "ASL doesn't sign every word you would use in English! Try using the most important ones.\n";
-            message2Text += "For example, rather than \n\"Where are you going?\", \ntry \n\"Where you go?\"";
-            message2.setText(message2Text);
+            message2.setText("ASL doesn't sign every word you would use in English! Try using only the most important ones.");
             message2.setTextColor(Color.WHITE);
             message2.setTextSize(24);
-            message2.setPadding(100, 100, 100, 100);
+            message2.setPadding(100, 100, 100, 0);
             message2.setTypeface(Typeface.MONOSPACE, Typeface.BOLD);
             message2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
+            TextView message3 = new TextView(this);
+            message3.setText("For example, rather than \n\"Where are you going?\", \ntry \n\"Where you go?\"");
+            message3.setTextColor(Color.WHITE);
+            message3.setTextSize(20);
+            message3.setPadding(100, 100, 100, 100);
+            message3.setTypeface(Typeface.MONOSPACE, Typeface.BOLD);
+            message3.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
             layoutY.addView(message);
             layoutY.addView(message2);
+            layoutY.addView(message3);
         }
         //Display available words
         else {
+            //Gather words that weren't found
+            ArrayList<String> notFound = new ArrayList<String>();
+            String[] words = original.split(" ");
+            for (int i = 0; i < words.length; i++) {
+                if (found.indexOf(words[i]) == -1) {
+                    notFound.add(words[i]);
+                }
+            }
+
+            // Build columns/rows
             int size = found.size();
             for (int i = 0; i < size; i++) {
                 HorizontalScrollView scrollX = new HorizontalScrollView(this);
@@ -176,7 +194,34 @@ public class translatorResult extends AppCompatActivity {
                 layoutY.addView(scrollX);
             }
 
-            //Display any words that were not found
+            //Add not found list to layoutY
+            if (notFound.isEmpty() == false) {
+                TextView title = new TextView(this);
+                title.setText("The following words are not available:");
+                title.setTextColor(Color.WHITE);
+                title.setTextSize(22);
+                title.setPadding(50, 50, 100, 50);
+                title.setTypeface(Typeface.MONOSPACE, Typeface.BOLD);
+                layoutY.addView(title);
+
+                for (int i = 0; i < notFound.size(); i++) {
+                    TextView notFoundWord = new TextView(this);
+                    notFoundWord.setText(notFound.get(i));
+                    notFoundWord.setTextColor(Color.WHITE);
+                    notFoundWord.setTextSize(20);
+                    notFoundWord.setPadding(100, 10, 100, 10);
+                    notFoundWord.setTypeface(Typeface.MONOSPACE, Typeface.BOLD);
+                    layoutY.addView(notFoundWord);
+                }
+
+                TextView title2 = new TextView(this);
+                title2.setText("\nMake sure to use basic, unconjugated words!");
+                title2.setTextColor(Color.WHITE);
+                title2.setTextSize(22);
+                title2.setPadding(50, 20, 100, 50);
+                title2.setTypeface(Typeface.MONOSPACE, Typeface.BOLD);
+                layoutY.addView(title2);
+            }
 
         }
 
